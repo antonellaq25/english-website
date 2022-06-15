@@ -139,6 +139,10 @@
     text-align: center;
     flex-shrink: 0;
     padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
  .footer-index {
     grid-column: 1 / 4;
@@ -226,10 +230,10 @@
     overflow: auto; 
   }
   .sidebar-logo {
-    background: #faf8f0 url(logo.PNG) no-repeat 55% 100%;
+    background: #faf8f0 url(images/logo.PNG) no-repeat 55% 100%;
     padding: 15px;
     padding-left: 0px;
-    height: 100px;
+    height: 122px;
     text-align: center;
   }
   .sidebar-logo .logo a {
@@ -256,7 +260,7 @@
   }
   .title-aboutus {
     text-align: left;
-    background:  url(home10.jpg) no-repeat;
+    background:  url(images/home10.jpg) no-repeat;
     height: 100px;
     padding: 20px;
     font-size: 50px;
@@ -355,4 +359,10 @@
     transform: rotateY(360deg);
   }
   
+}
+.nav-link-color {
+  color: #9f58a3 !important;
+}
+.carousel-item-color {
+  color: white;
 }
