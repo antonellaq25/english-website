@@ -257,6 +257,7 @@
   .main-container {
     margin-right: 8%;
     margin-left: 8%;
+    margin-bottom: 70px;
   }
   .title-aboutus {
     text-align: left;
@@ -368,4 +369,12 @@
 }
 .toggler-color {
   background-color: #9f58a3 !important;
+}
+.card:hover{
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  transform: scale(1.1);
+}
+.card{
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
