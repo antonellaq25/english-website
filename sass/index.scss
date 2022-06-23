@@ -233,6 +233,9 @@ $activeSidebarColor:#555;
   padding: 20px;
   margin: 20px;
 }
+.toggler-color {
+  background-color: $mainColor !important;
+}
 .index-bottom-text {
   font-size: large;
   font-style: italic;
