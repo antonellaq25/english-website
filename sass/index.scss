@@ -3,8 +3,14 @@
 @import './partials/_footer';
 @import './partials/_header';
 
-$mainColor: #9f58a3;
-$activeSidebarColor:#555;
+$colors: (
+	"primary": #9f58a3,
+	"secondary": #555,
+);
+@mixin sizes($height, $width) {
+  height: $height;
+  width: $width;
+}
 
 .sidebar {
     grid-column: 1 /  2;
@@ -32,11 +38,11 @@ $activeSidebarColor:#555;
     text-decoration: none;
   }
    a.active {
-    background-color: $mainColor;
+    background-color: map-get($colors, "primary");
     color: white;
   }
    a:hover:not(.active) {
-    background-color: $activeSidebarColor;
+    background-color: map-get($colors,"secondary");
     color: white;
   }
 }
@@ -66,8 +72,7 @@ $activeSidebarColor:#555;
   .cubo-sm {
     margin-top: 55px;
     display: block;
-    height: 100%;
-    width: 100%;
+    @include sizes(100%,100%);
     position: relative;
     transform-style: preserve-3d;
     animation: rotar 15s infinite linear;
@@ -75,40 +80,32 @@ $activeSidebarColor:#555;
   .index-image-sm{
     height: 150px;
   }
-  #cara1 {
+  .cara-base{
     position: absolute;
-    height: 100%;
-    width: 100%;
+    @include sizes(100%,100%);
+  }
+  #cara1 {
+    @extend .cara-base;
     transform: translateZ(-150px);
   }
   #cara2 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base;
     transform: translateZ(150px);
   }
   #cara3 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base;
     transform: translateX(150px) rotateY(90deg);
   }
   #cara4 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base;
     transform: translateX(-150px) rotateY(90deg);
   }
   #cara5 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base;
     transform: translateY(100px) rotateX(90deg);
   }
   #cara6 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base;
     transform: translateY(-100px) rotateX(90deg);
   }
 }
@@ -125,59 +122,47 @@ $activeSidebarColor:#555;
     display: none;
   }
   .cubo {
-    height: 100%;
-    width: 100%;
+    @include sizes(100%,100%);
     position: relative;
     transform-style: preserve-3d;
     animation: rotar 15s infinite linear;
   }
-  #cara1 {
+  .cara-base-sm{
     position: absolute;
-    height: 100%;
-    width: 100%;
+    @include sizes(100%,100%);
+  }
+  #cara1 {
+    @extend .cara-base-sm;
     transform: translateZ(-350px);
   }
   #cara2 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base-sm;
     transform: translateZ(350px);
   }
   #cara3 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base-sm;
     transform: translateX(350px) rotateY(90deg);
   }
   #cara4 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base-sm;
     transform: translateX(-350px) rotateY(90deg);
   }
   #cara5 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base-sm;
     transform: translateY(100px) rotateX(90deg);
   }
   #cara6 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @extend .cara-base-sm;
     transform: translateY(-100px) rotateX(90deg);
   }
 }
 @keyframes rotar {
-  
   from {
     transform: rotateY(0deg);
   }
-  
   to {
     transform: rotateY(360deg);
   }
-  
 }
 .body {
   text-align: center;
@@ -186,7 +171,7 @@ $activeSidebarColor:#555;
 .top-menu {
   padding: 40px;
   &-item {
-    color: $mainColor;
+    color: map-get($colors, "primary");;
     text-decoration: none;
   }
   &-item-login {
@@ -213,7 +198,7 @@ $activeSidebarColor:#555;
   }
 }
 .nav-link-color {
-  color: $mainColor !important;
+  color: map-get($colors, "primary") !important;
 }
 .active {
   font-weight: bold;
@@ -234,7 +219,7 @@ $activeSidebarColor:#555;
   margin: 20px;
 }
 .toggler-color {
-  background-color: $mainColor !important;
+  background-color: map-get($colors, "primary") !important;
 }
 .index-bottom-text {
   font-size: large;
