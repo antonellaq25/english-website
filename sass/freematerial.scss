@@ -1,0 +1,27 @@
+.free-material {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    &-body {
+      text-align: center;
+    }
+}
+ .video-container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+ .video-example {
+  flex-grow:1;
+  height: 320px;
+  padding: 10px;
+ }
+ .exercise-example {
+   margin: 10px;
+ }
+ .pdf-example {
+  width: 100%;
+  height: 500px;
+ }

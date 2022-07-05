@@ -1,0 +1,25 @@
+@import './partials/_footer';
+@import './partials/_header';
+
+@mixin margins($left, $right) {
+    margin-left: $left;
+    margin-right: $right;
+  }
+.main-container {
+    @include margins(8%,8%);
+    margin-bottom: 70px;
+  }
+  .title-aboutus {
+    text-align: left;
+    background:  url(../images/home10.jpg) no-repeat;
+    height: 100px;
+    padding: 20px;
+    font-size: 50px;
+    color: black;
+  }
+  .au-text {
+    @include margins(5%,5%);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    line-height: 1.8;
+  }
